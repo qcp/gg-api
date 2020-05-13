@@ -1,0 +1,13 @@
+{
+    "name": "gg-api",
+    "description": "api part of gg",
+    "version": "0.1.0",
+    "private": true,
+    "author": "qcp",
+  
+    "license": "ISC", 
+    "repository": "github:qcp/gg-api",
+
+    "image": "heroku/python",
+    "environments": { }
+  }
