@@ -1,10 +1,10 @@
 from flask import Flask
 from components.excel import excel
-from components.simple import simple
+from components.example import example
 
 app = Flask(__name__)
 app.register_blueprint(excel, url_prefix='/excel')
-app.register_blueprint(simple, url_prefix='/simple')
+app.register_blueprint(example, url_prefix='/example')
 
 @app.route('/', methods=['GET', 'POST'])
 def heello_world():
