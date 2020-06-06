@@ -1,18 +1,20 @@
 from flask import Blueprint, request, jsonify
-from flask_cors import CORS
+
+metadata = {
+    'name': 'Example auto test',
+    'description': 'Description about autotest for inquirer creating user',
+    'awailParameters': [{
+        'name': 'tt',
+        'description': 'tt description'
+    }],
+    'available': True
+}
+
 example = Blueprint('example', __name__)
-CORS(example)
 
 @example.route('/', methods=['GET'])
-def check():    
-    name = 'Example auto test'
-    description = 'Description about autotest for inquirer creating user'
-
-    awailParameters = []
-    awailParameters.append({'name': 'tt', 'description': 'tt description'})
-
-    return jsonify(status='OK', metadata={'name': name, 'description': description, 'available':True})
-
+def check():
+    return jsonify(status='OK', metadata=metadata)
 
 @example.route('/', methods=['POST'])
 def calculate():
